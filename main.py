@@ -7,10 +7,12 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from langchain_huggingface import HuggingFaceEmbeddings
 
+from langchain_community.vectorstores import Chroma
+
 from langchain_community.document_loaders import DirectoryLoader
 from langchain_community.document_loaders import UnstructuredFileLoader
 from langchain_community.document_loaders import TextLoader
-from langchain_community.vectorstores import FAISS
+#from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_groq import ChatGroq
@@ -37,7 +39,8 @@ texts = text_splitter.split_documents(documents)
 embeddings = HuggingFaceEmbeddings()
 
 # Vektorstore erstellen
-vectorstore = FAISS.from_documents(texts, embeddings)
+#vectorstore = FAISS.from_documents(texts, embeddings)
+vectorstore = Chroma.from_documents(texts, embeddings)
 
 # Groq-Modell initialisieren
 #llm = ChatGroq(model_name="mixtral-8x7b-32768", temperature = 0.7)
