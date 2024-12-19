@@ -1,0 +1,10 @@
+streamlit
+langchain-community
+langchain-groq
+langchain-huggingface
+langchain-text-splitters
+faiss-cpu
+tiktoken
+unstructured
+unstructured[pdf]
+sentence-transformers
