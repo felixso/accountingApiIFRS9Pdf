@@ -3,7 +3,8 @@ langchain-community
 langchain-groq
 langchain-huggingface
 langchain-text-splitters
-faiss-gpu
+langchain-chroma
+faiss-cpu
 tiktoken
 unstructured
 unstructured[pdf]
